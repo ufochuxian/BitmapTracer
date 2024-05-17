@@ -4,10 +4,6 @@ import androidx.annotation.Keep;
 
 import java.io.Serializable;
 
-/**
- * 某张图片的详细信息
- * @create by : zhangshixin
- */
 @Keep
 public class BitmapRecord implements Serializable {
 

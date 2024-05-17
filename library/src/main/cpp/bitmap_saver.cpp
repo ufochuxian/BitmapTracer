@@ -1,6 +1,3 @@
-//
-// Created by sunnian who I called the Android Performance Master
-//
 
 #include <cstdio>
 #include <cstring>

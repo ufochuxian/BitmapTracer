@@ -1,6 +1,3 @@
-//
-// Created by zhangshixin
-//
 
 #ifndef MY_APPLICATION_BITMAP_MONITOR_H
 #define MY_APPLICATION_BITMAP_MONITOR_H

@@ -1,7 +1,3 @@
-//
-// Created by zhangshixin
-//
-
 #include <jni.h>
 #include <android/bitmap.h>
 #include <android/trace.h>

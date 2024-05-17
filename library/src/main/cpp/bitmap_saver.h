@@ -1,6 +1,3 @@
-//
-// Created by sunnian who I called the Android Performance Master
-//
 
 #ifndef PROTO_BITMAPSAVER_H
 #define PROTO_BITMAPSAVER_H

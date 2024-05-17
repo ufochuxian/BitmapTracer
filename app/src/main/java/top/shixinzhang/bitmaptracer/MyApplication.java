@@ -14,16 +14,6 @@ import androidx.annotation.Nullable;
 import top.shixinzhang.bitmapmonitor.BitmapMonitor;
 import top.shixinzhang.bitmapmonitor.BitmapMonitorData;
 
-/**
- * Description: BitmapMonitor example application
- * <br>
- *
- * <br> Created by shixinzhang on 2022/5/9.
- *
- * <br> Email: shixinzhang2016@gmail.com
- *
- * <br> https://about.me/shixinzhang
- */
 public class MyApplication extends Application {
 
     public static Activity sCurrentActivity;
@@ -37,7 +27,7 @@ public class MyApplication extends Application {
         long threshold = 100 * 1024;
         long restoreImageThreshold = 100 * 1024;;
         String dir = this.getExternalFilesDir("bitmap_monitor").getAbsolutePath();
-        Log.d("bitmapmonitor", "restoreImageDirectory: " + dir);
+        Log.d("bitmaptracer", "restoreImageDirectory: " + dir);
 
         BitmapMonitor.Config config = new BitmapMonitor.Config.Builder()
                 .checkRecycleInterval(checkInterval)    //检查图片是否被回收的间隔，单位：秒 （建议不要太频繁，默认 5秒）
@@ -57,7 +47,7 @@ public class MyApplication extends Application {
         BitmapMonitor.addListener(new BitmapMonitor.BitmapInfoListener() {
             @Override
             public void onBitmapInfoChanged(final BitmapMonitorData data) {
-                Log.d("bitmapmonitor", "onBitmapInfoChanged: " + data);
+                Log.d("bitmaptracer", "onBitmapInfoChanged: " + data);
             }
         });
 
@@ -80,11 +70,11 @@ public class MyApplication extends Application {
         //5.主动 dump 数据
         //获取所有数据
         BitmapMonitorData bitmapAllData = BitmapMonitor.dumpBitmapInfo();
-        Log.d("bitmapmonitor", "bitmapAllData: " + bitmapAllData);
+        Log.d("bitmaptracer", "bitmapAllData: " + bitmapAllData);
 
         //仅获取数量和内存大小，不获取具体图片信息
         BitmapMonitorData bitmapCountData = BitmapMonitor.dumpBitmapCount();
-        Log.d("bitmapmonitor", "bitmapCountData: " + bitmapCountData);
+        Log.d("bitmaptracer", "bitmapCountData: " + bitmapCountData);
 
     }
 }
