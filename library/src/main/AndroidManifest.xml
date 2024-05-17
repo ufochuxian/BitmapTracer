@@ -5,7 +5,7 @@
 
     <application>
         <provider
-            android:name=".internal.BitmapMonitorProvider"
+            android:name=".internal.BitmapTracerProvider"
             android:authorities="${applicationId}.bitmap-monitor"
             android:exported="false" />
         <activity android:label="BitmapRecordList" android:name=".ui.BitmapRecordsActivity" android:launchMode="singleTask"/>

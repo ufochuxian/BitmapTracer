@@ -26,15 +26,15 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 
-import top.shixinzhang.bitmapmonitor.BitmapMonitor;
-import top.shixinzhang.bitmapmonitor.BitmapMonitorData;
+import top.shixinzhang.bitmapmonitor.BitmapTracer;
+import top.shixinzhang.bitmapmonitor.BitmapTracerData;
 import top.shixinzhang.bitmapmonitor.BitmapRecord;
 import top.shixinzhang.bitmapmonitor.R;
 
 @Keep
 public class BitmapRecordsActivity extends Activity implements View.OnClickListener {
 
-    BitmapMonitorData data;
+    BitmapTracerData data;
     TextView tvSortBySize, tvSortByTime, tvSummary;
     RecyclerView recyclerView;
     BitmapRecordAdapter bitmapRecordAdapter;
@@ -62,7 +62,7 @@ public class BitmapRecordsActivity extends Activity implements View.OnClickListe
         new Thread(new Runnable() {
             @Override
             public void run() {
-                data = BitmapMonitor.dumpBitmapInfo(true);
+                data = BitmapTracer.dumpBitmapInfo(true);
                 if (data == null) {
                     return;
                 }

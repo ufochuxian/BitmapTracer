@@ -1,0 +1,3 @@
+/Users/chenjianxiang/Documents/opensource/BitmapTracer/library/.cxx/Debug/w58713ik/arm64-v8a/CMakeFiles/bitmapmonitor.dir
+/Users/chenjianxiang/Documents/opensource/BitmapTracer/library/.cxx/Debug/w58713ik/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/chenjianxiang/Documents/opensource/BitmapTracer/library/.cxx/Debug/w58713ik/arm64-v8a/CMakeFiles/rebuild_cache.dir

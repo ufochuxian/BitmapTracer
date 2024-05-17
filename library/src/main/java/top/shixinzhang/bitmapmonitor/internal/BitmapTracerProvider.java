@@ -9,7 +9,7 @@ import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class BitmapMonitorProvider extends ContentProvider {
+public class BitmapTracerProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {

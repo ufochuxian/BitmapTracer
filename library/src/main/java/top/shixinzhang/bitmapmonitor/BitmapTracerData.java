@@ -1,18 +1,15 @@
 package top.shixinzhang.bitmapmonitor;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.LinkedList;
 import java.util.Locale;
 
 import androidx.annotation.Keep;
 
 /**
  * 当前内存中的图片整体数据
- * @create by : zhangshixin
  */
 @Keep
-public class BitmapMonitorData {
+public class BitmapTracerData {
     //历史创建的总图片数
     public long createBitmapCount;
     //历史创建的总图片内存大小，单位 byte
@@ -26,8 +23,8 @@ public class BitmapMonitorData {
     //泄漏（未释放）的 bitmap 数据
     public BitmapRecord[] remainBitmapRecords;
 
-    public BitmapMonitorData(long createBitmapCount, long createBitmapMemorySize,
-                             long remainBitmapCount, long remainBitmapMemorySize) {
+    public BitmapTracerData(long createBitmapCount, long createBitmapMemorySize,
+                            long remainBitmapCount, long remainBitmapMemorySize) {
         this.createBitmapCount = createBitmapCount;
         this.createBitmapMemorySize = createBitmapMemorySize;
         this.remainBitmapCount = remainBitmapCount;

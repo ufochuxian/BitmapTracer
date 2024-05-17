@@ -20,12 +20,12 @@ import androidx.annotation.Nullable;
 
 import java.util.Locale;
 
-import top.shixinzhang.bitmapmonitor.BitmapMonitor;
-import top.shixinzhang.bitmapmonitor.BitmapMonitorData;
+import top.shixinzhang.bitmapmonitor.BitmapTracer;
+import top.shixinzhang.bitmapmonitor.BitmapTracerData;
 import top.shixinzhang.bitmapmonitor.R;
 import top.shixinzhang.bitmapmonitor.internal.VisibilityTracker;
 
-public class FloatWindowService extends Service implements BitmapMonitor.BitmapInfoListener, VisibilityTracker.AppVisibilityListener {
+public class FloatWindowService extends Service implements BitmapTracer.BitmapInfoListener, VisibilityTracker.AppVisibilityListener {
 
     private float lastMoveX;
     private float lastMoveY;
@@ -72,7 +72,7 @@ public class FloatWindowService extends Service implements BitmapMonitor.BitmapI
     }
 
     @Override
-    public void onBitmapInfoChanged(BitmapMonitorData data) {
+    public void onBitmapInfoChanged(BitmapTracerData data) {
         H.post(() -> updateFloatViewUI(data));
     }
 
@@ -84,14 +84,14 @@ public class FloatWindowService extends Service implements BitmapMonitor.BitmapI
     private void initService() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Settings.canDrawOverlays(this)) {
             addFloatView();
-            BitmapMonitor.addListener(this);
+            BitmapTracer.addListener(this);
         }
         VisibilityTracker.registerVisibilityListener(this);
     }
 
     private void clear() {
         removeView();
-        BitmapMonitor.removeListener(this);
+        BitmapTracer.removeListener(this);
         VisibilityTracker.unregisterVisibilityListener(this);
     }
 
@@ -122,7 +122,7 @@ public class FloatWindowService extends Service implements BitmapMonitor.BitmapI
 
         setListener();
 
-        BitmapMonitorData bitmapMonitorData = BitmapMonitor.dumpBitmapCount();
+        BitmapTracerData bitmapMonitorData = BitmapTracer.dumpBitmapCount();
         updateFloatViewUI(bitmapMonitorData);
     }
 
@@ -135,7 +135,7 @@ public class FloatWindowService extends Service implements BitmapMonitor.BitmapI
         floatView.setOnTouchListener(new FloatOnTouchListener());
     }
 
-    private void updateFloatViewUI(BitmapMonitorData data) {
+    private void updateFloatViewUI(BitmapTracerData data) {
         if (data == null) {
             return;
         }

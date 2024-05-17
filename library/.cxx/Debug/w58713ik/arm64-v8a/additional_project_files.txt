@@ -1,0 +1,2 @@
+/Users/chenjianxiang/Documents/opensource/BitmapTracer/library/src/main/cpp/bitmap_monitor.h
+/Users/chenjianxiang/Documents/opensource/BitmapTracer/library/src/main/cpp/bitmap_saver.h

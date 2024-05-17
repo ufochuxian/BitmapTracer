@@ -1,7 +1,6 @@
 package top.shixinzhang.bitmapmonitor.internal;
 
 import android.os.Build;
-import android.os.FileUtils;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -16,7 +15,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import top.shixinzhang.bitmapmonitor.BitmapMonitor;
+import top.shixinzhang.bitmapmonitor.BitmapTracer;
 
 public class BitmapFileWatcher {
 
@@ -89,12 +88,12 @@ public class BitmapFileWatcher {
 
     public static void startWatch(String path) {
         // FIXME: 2023/3/12
-        BitmapMonitor.log("BitmapFileWatcher s1 startWatch " + sClearFileWhenOutOfThreshold + ", " + path + ", exist: " + new File(path).exists());
+        BitmapTracer.log("BitmapFileWatcher s1 startWatch " + sClearFileWhenOutOfThreshold + ", " + path + ", exist: " + new File(path).exists());
         if (!sClearFileWhenOutOfThreshold || TextUtils.isEmpty(path)) {
             return;
         }
         if (!new File(path).exists()) {
-            BitmapMonitor.log("BitmapFileWatcher return, file not exist " + path);
+            BitmapTracer.log("BitmapFileWatcher return, file not exist " + path);
             return;
         }
         mFileWatcherExecutor.execute(new WatchFileRunnable(path));
@@ -170,7 +169,7 @@ public class BitmapFileWatcher {
                     deleteDir(f);
                 }
 
-                if (BitmapMonitor.isDebug()) {
+                if (BitmapTracer.isDebug()) {
                     Log.d("BitmapMonitor", "deleteDir size: " + files.length);
                 }
             }
@@ -193,7 +192,7 @@ public class BitmapFileWatcher {
         @Override
         public void run() {
 
-            BitmapMonitor.log("BitmapFileWatcher s2 WatchFileRunnable run " + mCurFilePath);
+            BitmapTracer.log("BitmapFileWatcher s2 WatchFileRunnable run " + mCurFilePath);
 
             File file = new File(mCurFilePath);
             if (!file.exists() || !file.isFile()) return;
@@ -202,8 +201,8 @@ public class BitmapFileWatcher {
                 mUsedTotalSize += file.length();
                 long over = mLimitBytes - mUsedTotalSize;
 
-                if (BitmapMonitor.isDebug()) {
-                    BitmapMonitor.log("WatchFileRunnable.run >> file size: " + file.length() + ", totalSize:" + mUsedTotalSize + ", over " + over);
+                if (BitmapTracer.isDebug()) {
+                    BitmapTracer.log("WatchFileRunnable.run >> file size: " + file.length() + ", totalSize:" + mUsedTotalSize + ", over " + over);
                 }
 
                 if (over < 0) deleteFileFromRootDirectory(over);

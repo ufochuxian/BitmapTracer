@@ -384,7 +384,7 @@ jint do_hook_bitmap(long bitmap_recycle_check_interval,
                                                                "()Z");
 
             jclass bitmap_info_jobject = jni_env->FindClass(
-                    "top/shixinzhang/bitmapmonitor/BitmapMonitorData");
+                    "top/shixinzhang/bitmapmonitor/BitmapTracerData");
             g_ctx.bitmap_info_jclass = static_cast<jclass>(jni_env->NewGlobalRef(
                     bitmap_info_jobject));
 
@@ -521,7 +521,7 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
         return JNI_ERR;
     }
 
-    jclass clz = env->FindClass("top/shixinzhang/bitmapmonitor/BitmapMonitor");
+    jclass clz = env->FindClass("top/shixinzhang/bitmapmonitor/BitmapTracer");
     g_ctx.bitmap_monitor_jclass = (jclass)env->NewGlobalRef(clz);
 
     jmethodID dump_stack_method_id =
@@ -552,12 +552,12 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
 
 extern "C"
 JNIEXPORT jint JNICALL
-Java_top_shixinzhang_bitmapmonitor_BitmapMonitor_hookBitmapNative(JNIEnv *env, jclass clazz,
-                                                                  jlong check_recycle_interval,
-                                                                  jlong get_stack_threshold,
-                                                                  jlong restore_image_threshold,
-                                                                  jstring restore_image_dir,
-                                                                  jboolean notify_check_local_image_size) {
+Java_top_shixinzhang_bitmapmonitor_BitmapTracer_hookBitmapNative(JNIEnv *env, jclass clazz,
+                                                                 jlong check_recycle_interval,
+                                                                 jlong get_stack_threshold,
+                                                                 jlong restore_image_threshold,
+                                                                 jstring restore_image_dir,
+                                                                 jboolean notify_check_local_image_size) {
 
     const char* dir = env->GetStringUTFChars(restore_image_dir, 0);
     return do_hook_bitmap(check_recycle_interval, get_stack_threshold, restore_image_threshold, dir, notify_check_local_image_size);
@@ -565,7 +565,7 @@ Java_top_shixinzhang_bitmapmonitor_BitmapMonitor_hookBitmapNative(JNIEnv *env, j
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_top_shixinzhang_bitmapmonitor_BitmapMonitor_stopHookBitmapNative(JNIEnv *env, jclass clazz) {
+Java_top_shixinzhang_bitmapmonitor_BitmapTracer_stopHookBitmapNative(JNIEnv *env, jclass clazz) {
     g_ctx.open_hook = false;
     if (g_ctx.shadowhook_stub != nullptr) {
         shadowhook_unhook(g_ctx.shadowhook_stub);
@@ -574,7 +574,7 @@ Java_top_shixinzhang_bitmapmonitor_BitmapMonitor_stopHookBitmapNative(JNIEnv *en
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_top_shixinzhang_bitmapmonitor_BitmapMonitor_dumpBitmapCountNative(JNIEnv *env, jclass clazz) {
+Java_top_shixinzhang_bitmapmonitor_BitmapTracer_dumpBitmapCountNative(JNIEnv *env, jclass clazz) {
     if (!g_ctx.open_hook) {
         return nullptr;
     }
@@ -583,6 +583,6 @@ Java_top_shixinzhang_bitmapmonitor_BitmapMonitor_dumpBitmapCountNative(JNIEnv *e
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_top_shixinzhang_bitmapmonitor_BitmapMonitor_dumpBitmapInfoNative(JNIEnv *env, jclass clazz, jboolean ensureRestoreImage) {
+Java_top_shixinzhang_bitmapmonitor_BitmapTracer_dumpBitmapInfoNative(JNIEnv *env, jclass clazz, jboolean ensureRestoreImage) {
     return do_dump_info(env, false, ensureRestoreImage);
 }

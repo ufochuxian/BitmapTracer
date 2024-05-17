@@ -7,8 +7,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
 
-import top.shixinzhang.bitmapmonitor.BitmapMonitor;
-
 public class FloatWindow {
     public static void show(Context context) {
         if (context == null) {

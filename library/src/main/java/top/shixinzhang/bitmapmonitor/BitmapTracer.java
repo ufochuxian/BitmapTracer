@@ -18,23 +18,17 @@ import top.shixinzhang.bitmapmonitor.internal.BitmapFileWatcher;
 import top.shixinzhang.bitmapmonitor.ui.FloatWindow;
 
 /**
- * Description: BitmapMonitor 入口类，如果要修改配置请调用 new BitmapMonitor.Config.Builder()
- * <br>
  *
- * <br> Created by shixinzhang on 2022/5/8.
- *
- * <br> Email: shixinzhang2016@gmail.com
- *
- * <br> https://about.me/shixinzhang
+ * BitmapTracer
  */
 @Keep
-public class BitmapMonitor {
+public class BitmapTracer {
     static {
         System.loadLibrary("bitmapmonitor");
     }
 
     public interface BitmapInfoListener {
-        void onBitmapInfoChanged(BitmapMonitorData data);
+        void onBitmapInfoChanged(BitmapTracerData data);
     }
 
     public interface CurrentSceneProvider {
@@ -117,19 +111,19 @@ public class BitmapMonitor {
      * 获取这段期间 hook 的 bitmap 数据 （包括总数和具体各个图片的信息）
      */
     @WorkerThread
-    public static BitmapMonitorData dumpBitmapInfo() {
+    public static BitmapTracerData dumpBitmapInfo() {
         return dumpBitmapInfoNative(false);
     }
 
     @WorkerThread
-    public static BitmapMonitorData dumpBitmapInfo(boolean ensureRestoreImage) {
+    public static BitmapTracerData dumpBitmapInfo(boolean ensureRestoreImage) {
         return dumpBitmapInfoNative(true);
     }
 
     /**
      * 获取这段期间 hook 的 bitmap 数量（只有总数，没有具体的图片信息）
      */
-    public static BitmapMonitorData dumpBitmapCount() {
+    public static BitmapTracerData dumpBitmapCount() {
         return dumpBitmapCountNative();
     }
 
@@ -148,7 +142,7 @@ public class BitmapMonitor {
      * @return
      */
     @Keep
-    public static void reportBitmapInfo(BitmapMonitorData info) {
+    public static void reportBitmapInfo(BitmapTracerData info) {
         for (BitmapInfoListener listener : sListener) {
             listener.onBitmapInfoChanged(info);
         }
@@ -249,7 +243,7 @@ public class BitmapMonitor {
      * @return
      */
     @Keep
-    private static native BitmapMonitorData dumpBitmapCountNative();
+    private static native BitmapTracerData dumpBitmapCountNative();
 
     /**
      * Get all bitmap info
@@ -257,7 +251,7 @@ public class BitmapMonitor {
      * @return
      */
     @Keep
-    private static native BitmapMonitorData dumpBitmapInfoNative(boolean ensureRestoreImage);
+    private static native BitmapTracerData dumpBitmapInfoNative(boolean ensureRestoreImage);
 
     public static class Config {
         //检查 Bitmap 是否回收的间隔，单位：秒

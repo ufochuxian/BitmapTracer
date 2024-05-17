@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "prefabPath": "/Users/chenjianxiang/.gradle/caches/modules-2/files-2.1/com.google.prefab/cli/2.0.0/f2702b5ca13df54e3ca92f29d6b403fb6285d8df/cli-2.0.0-all.jar",
+  "packages": [
+    "/Users/chenjianxiang/.gradle/caches/transforms-3/1606cc446dbc04d7ac03340f2760b8e9/transformed/jetified-shadowhook-1.0.3/prefab"
+  ]
+}

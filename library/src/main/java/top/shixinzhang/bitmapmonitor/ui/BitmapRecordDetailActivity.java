@@ -17,7 +17,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-import top.shixinzhang.bitmapmonitor.BitmapMonitor;
+import top.shixinzhang.bitmapmonitor.BitmapTracer;
 import top.shixinzhang.bitmapmonitor.BitmapRecord;
 import top.shixinzhang.bitmapmonitor.R;
 
@@ -56,7 +56,7 @@ public class BitmapRecordDetailActivity extends Activity {
     }
 
     private String getStackTraceDefaultTip() {
-        return STACK_TRACE_DEFAULT + "\n" + BitmapMonitor.getConfig();
+        return STACK_TRACE_DEFAULT + "\n" + BitmapTracer.getConfig();
     }
 
     public static void setTextSafe(TextView textView, String data) {

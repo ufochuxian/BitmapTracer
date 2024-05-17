@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/Users/chenjianxiang/Documents/opensource/BitmapTracer/library/.cxx/Debug/w58713ik/arm64-v8a",
+  "command": "/Users/chenjianxiang/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android21 --sysroot=/Users/chenjianxiang/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dbitmapmonitor_EXPORTS -isystem /Users/chenjianxiang/.gradle/caches/transforms-3/1606cc446dbc04d7ac03340f2760b8e9/transformed/jetified-shadowhook-1.0.3/prefab/modules/shadowhook/include -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -g  -fno-limit-debug-info -fPIC -o CMakeFiles/bitmapmonitor.dir/bitmap_monitor.cpp.o -c /Users/chenjianxiang/Documents/opensource/BitmapTracer/library/src/main/cpp/bitmap_monitor.cpp",
+  "file": "/Users/chenjianxiang/Documents/opensource/BitmapTracer/library/src/main/cpp/bitmap_monitor.cpp"
+},
+{
+  "directory": "/Users/chenjianxiang/Documents/opensource/BitmapTracer/library/.cxx/Debug/w58713ik/arm64-v8a",
+  "command": "/Users/chenjianxiang/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android21 --sysroot=/Users/chenjianxiang/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dbitmapmonitor_EXPORTS -isystem /Users/chenjianxiang/.gradle/caches/transforms-3/1606cc446dbc04d7ac03340f2760b8e9/transformed/jetified-shadowhook-1.0.3/prefab/modules/shadowhook/include -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -g  -fno-limit-debug-info -fPIC -o CMakeFiles/bitmapmonitor.dir/bitmap_saver.cpp.o -c /Users/chenjianxiang/Documents/opensource/BitmapTracer/library/src/main/cpp/bitmap_saver.cpp",
+  "file": "/Users/chenjianxiang/Documents/opensource/BitmapTracer/library/src/main/cpp/bitmap_saver.cpp"
+}
+]

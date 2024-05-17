@@ -1,0 +1,1 @@
+/Users/chenjianxiang/Documents/opensource/BitmapTracer/library/build/intermediates/cxx/RelWithDebInfo/5k47422d/obj/arm64-v8a
