@@ -12,7 +12,7 @@
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="12dp"
-        tools:context=".MainActivity">
+        tools:context="top.shixinzhang.bitmaptracer.MainActivity">
 
         <TextView
             android:id="@+id/tv_title"

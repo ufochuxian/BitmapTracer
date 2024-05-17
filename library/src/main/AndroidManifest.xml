@@ -5,11 +5,11 @@
 
     <application>
         <provider
-            android:name=".internal.BitmapTracerProvider"
+            android:name="top.shixinzhang.bitmaptracer.internal.BitmapTracerProvider"
             android:authorities="${applicationId}.bitmap-monitor"
             android:exported="false" />
-        <activity android:label="BitmapRecordList" android:name=".ui.BitmapRecordsActivity" android:launchMode="singleTask"/>
-        <activity android:label="BitmapRecordDetail" android:name=".ui.BitmapRecordDetailActivity" android:launchMode="singleTask"/>
-        <service android:name=".ui.FloatWindowService"/>
+        <activity android:label="BitmapRecordList" android:name="top.shixinzhang.bitmaptracer.ui.BitmapRecordsActivity" android:launchMode="singleTask"/>
+        <activity android:label="BitmapRecordDetail" android:name="top.shixinzhang.bitmaptracer.ui.BitmapRecordDetailActivity" android:launchMode="singleTask"/>
+        <service android:name="top.shixinzhang.bitmaptracer.ui.FloatWindowService"/>
     </application>
 </manifest>
