@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$USER_HOME$/.gradle/caches/transforms-3/1606cc446dbc04d7ac03340f2760b8e9/transformed/jetified-shadowhook-1.0.3/prefab/modules/shadowhook/include">
+      <sourceFolder url="file://$USER_HOME$/.gradle/caches/transforms-3/1606cc446dbc04d7ac03340f2760b8e9/transformed/jetified-shadowhook-1.0.3/prefab/modules/shadowhook/include" type="native-header-root" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../library/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../../library/src/main/cpp" type="native-Source-root" />
+    </content>
+  </component>
+</module>

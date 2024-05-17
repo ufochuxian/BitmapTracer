@@ -54,7 +54,7 @@ public class BitmapRecord implements Serializable {
 
     public String getFormatSize() {
         int size = width * height * bitsPerPixel;
-        return BitmapMonitorData.getFormatSize(size);
+        return BitmapTracerData.getFormatSize(size);
     }
 
     public int getSize() {

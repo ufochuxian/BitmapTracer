@@ -16,7 +16,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "BitmapMonitor"
+rootProject.name = "BitmapTracer"
 include ':app'
 include ':library'
 include ':library-no-op'

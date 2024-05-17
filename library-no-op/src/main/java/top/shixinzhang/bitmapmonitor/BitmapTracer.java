@@ -19,11 +19,11 @@ import androidx.annotation.Keep;
  * <br> https://about.me/shixinzhang
  */
 @Keep
-public class BitmapMonitor {
+public class BitmapTracer {
 
 
     public interface BitmapInfoListener {
-        void onBitmapInfoChanged(BitmapMonitorData data);
+        void onBitmapInfoChanged(BitmapTracerData data);
     }
 
     public interface CurrentSceneProvider {
@@ -53,11 +53,11 @@ public class BitmapMonitor {
     public static void toggleFloatWindowVisibility(boolean show) {
     }
 
-    public static BitmapMonitorData dumpBitmapInfo() {
+    public static BitmapTracerData dumpBitmapInfo() {
         return null;
     }
 
-    public static BitmapMonitorData dumpBitmapCount() {
+    public static BitmapTracerData dumpBitmapCount() {
         return null;
     }
 
@@ -68,7 +68,7 @@ public class BitmapMonitor {
     }
 
     @Keep
-    public static void reportBitmapInfo(BitmapMonitorData info) {
+    public static void reportBitmapInfo(BitmapTracerData info) {
     }
 
     @Keep
